@@ -57,23 +57,23 @@ Duration Duration::operator+(const Duration &d) {
     int newSeconds = this->getSeconds() + d.seconds;
     int newMinutes = this->getMinutes() + d.minutes;
     int newHours = this->getHours() + d.hours;
-    incrementMinsIfNeeded(newSeconds, newMinutes);
+    incrementMinutesIfNeeded(newSeconds, newMinutes);
     incrementHoursIfNeeded(newMinutes, newHours);
 
-    return Duration(newSeconds, newMinutes, newHours);
+    return Duration(newHours, newMinutes, newSeconds);
 }
 
-void Duration::incrementMinsIfNeeded(int newSeconds, int newMinutes) const {
-    while (newSeconds > 60) {
-        newSeconds -= 60;
-        newMinutes+=1;
+void Duration::incrementHoursIfNeeded(int &newMinutes, int &newHours) const {
+    while (newMinutes >= 60) {
+        newMinutes -= 60;
+        newHours+=1;
     }
 }
 
-void Duration::incrementHoursIfNeeded(int newMinutes, int newHours) const {
-    while (newMinutes > 60) {
-        newMinutes -= 60;
-        newHours+=1;
+void Duration::incrementMinutesIfNeeded(int &newSeconds, int &newMinutes) const {
+    while (newSeconds >= 60) {
+        newSeconds -= 60;
+        newMinutes += 1;
     }
 }
 

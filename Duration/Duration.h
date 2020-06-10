@@ -40,9 +40,9 @@ public:
 
     Duration operator-(const Duration &d);
 
-    void incrementMinsIfNeeded(int newSeconds, int newMinutes) const;
+    void incrementMinutesIfNeeded(int &newSeconds, int &newMinutes) const;
 
-    void incrementHoursIfNeeded(int newMinutes, int newHours) const;
+    void incrementHoursIfNeeded(int &newMinutes, int &newHours) const;
 };
 
 ostream& operator<<(ostream& str, Duration &dur);
