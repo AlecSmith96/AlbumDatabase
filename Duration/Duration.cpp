@@ -81,6 +81,10 @@ Duration Duration::operator-(const Duration &d) {
     //NOT YET IMPLEMENTED
 }
 
+Duration::~Duration() {
+
+}
+
 ostream& operator<<(ostream& str, Duration &dur) {
     return str << std::setfill('0') << std::setw(2) << dur.getHours() << ':' << std::setw(2) << dur.getMinutes() << ':' << std::setw(2) << dur.getSeconds();
 }

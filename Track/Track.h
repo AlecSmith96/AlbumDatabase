@@ -22,6 +22,8 @@ public:
     void setTitle(const string &title);
     Duration getDuration();
     void setDuration(const Duration &duration);
+
+    virtual ~Track();
 };
 
 ostream& operator<<(ostream& str, Track &track);

@@ -31,6 +31,10 @@ void Track::setDuration(const Duration &duration) {
     Track::duration = duration;
 }
 
+Track::~Track() {
+
+}
+
 ostream& operator<<(ostream& str, Track &track) {
     Duration dur = track.getDuration();
     return str << track.getTitle() << " - " << dur;

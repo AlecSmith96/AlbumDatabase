@@ -34,6 +34,8 @@ public:
 
     Duration operator+(const Duration &d);
     Duration operator-(const Duration &d);
+
+    virtual ~Duration();
 };
 
 ostream& operator<<(ostream& str, Duration &dur);
