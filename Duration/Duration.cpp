@@ -78,7 +78,7 @@ void Duration::incrementMinutesIfNeeded(int &newSeconds, int &newMinutes) const 
 }
 
 Duration Duration::operator-(const Duration &d) {
-
+    //NOT YET IMPLEMENTED
 }
 
 ostream& operator<<(ostream& str, Duration &dur) {

@@ -15,34 +15,25 @@ private:
     int minutes;
     int hours;
 
+    void incrementMinutesIfNeeded(int &newSeconds, int &newMinutes) const;
+    void incrementHoursIfNeeded(int &newMinutes, int &newHours) const;
+
 public:
     Duration();
-
     Duration(int hours, int minutes, int seconds);
 
     int getSeconds();
-
     void setSeconds(int seconds);
-
     int getMinutes();
-
     void setMinutes(int minutes);
-
     int getHours();
-
     void setHours(int Hours);
 
     bool operator==(const Duration &d);
-
     bool operator!=(const Duration &d);
 
     Duration operator+(const Duration &d);
-
     Duration operator-(const Duration &d);
-
-    void incrementMinutesIfNeeded(int &newSeconds, int &newMinutes) const;
-
-    void incrementHoursIfNeeded(int &newMinutes, int &newHours) const;
 };
 
 ostream& operator<<(ostream& str, Duration &dur);
